@@ -6,19 +6,14 @@
 
 Созданы юнит-тесты, покрывающие классы `Bun`, `Burger`, `Ingredient`, `Database`
 
-Процент покрытия 100% (отчет: `htmlcov/index.html`)
+Процент покрытия 99% (отчет: `htmlcov/index.html`)
 
-### Структура проекта
+### Структура тестов
 
-- `praktikum` - пакет, содержащий код программы
-- `tests` - пакет, содержащий тесты, разделенные по классам. Например, `bun_test.py`, `burger_test.py` и т.д.
-
-### Запуск автотестов
-
-**Установка зависимостей**
-
-> `$ pip install -r requirements.txt`
-
-**Запуск автотестов и создание HTML-отчета о покрытии**
-
->  `$ pytest --cov=praktikum --cov-report=html`
+| Файл                     | Что проверяется                                                                     |
+| ------------------------ | ----------------------------------------------------------------------------------- |
+| `test_bun.py`            | Геттеры `get_name()`, `get_price()` в `Bun`                                         |
+| `test_ingredient.py`     | Геттеры `get_name()`, `get_price()`, `get_type()` в `Ingredient`, параметризация    |
+| `test_burger.py`         | Логика: `set_buns`, `add/remove/move ingredient`, `get_price()`, чек                |
+| `test_database.py`       | Методы `available_buns()`, `available_ingredients()` возвращают валидные объекты    |
+| `test_praktikum_main.py` | Тест функции `main()` с моками (`Database`, `Bun`, `Ingredient`) и проверкой вывода |
